@@ -22,6 +22,10 @@ const getNomesAnimais = require("../service/getNomesAnimaisService")
 const insertVacina = require("../service/insertVacinaService")
 const listaVacina = require("../service/getListaVacinaService")
 
+router.get("/", function (req,res){
+    res.json('olá Ipet')
+})
+
 router.get("/cadastrousuario", async function (req, res) {
     const usuarios = await petService.getCadastroPessoa()
     res.json(usuarios)
