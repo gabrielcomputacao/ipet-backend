@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const port = process.env.PORT || 3005;
 
-app.use('/', require('./route/petRoute'))
+app.use('/', require('./server/route/petRoute'))
 /* funcao de roteamento para que todas as
 rotas construidas no petroute sejam usadas
 aqui no server */
