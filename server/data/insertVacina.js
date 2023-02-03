@@ -11,12 +11,14 @@ exports.insertVacina = async function(vacina){
         const values = [vacina.iduser,vacina.nomeVacina,vacina.nomeAnimais,vacina.fabricacao ,1,vacina.veterinario,vacina.vencimento,vacina.datavacinacao,vacina.revacinacao,vacina.obs];
 
         const [rows] = await dataB.query(sql,values);
-        /* await dataB.end(); */
+        await dataB.end();
 
         return rows;
 
     } catch (error) {
         console.log(error)
+    }finally{
+        dataB.destroy();
     }
 
 }

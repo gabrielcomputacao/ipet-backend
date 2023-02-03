@@ -9,11 +9,13 @@ exports.getNomeAnimal = async function (iduser){
         const sql = "SELECT *FROM animal WHERE cod_usuario = ?";
         let values = [iduser] ;
         const [rows] = await dataB.query(sql,values);
-       /*  await dataB.end(); */
+        await dataB.end();
         return rows;
         
     } catch (error) {
         console.log(error)
+    }finally{
+        dataB.destroy();
     }
 
 
