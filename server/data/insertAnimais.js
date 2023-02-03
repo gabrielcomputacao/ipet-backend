@@ -1,8 +1,10 @@
 const database = require("../infra/database/databaseMysql");
 
 exports.insertAnimal = async function (animal) {
+ 
+ const dataB = await database();
   try {
-    const dataB = await database();
+    
     const sql =
       "INSERT INTO animal(nome,data_nascimento,sexo,pelagem,alergia,doenca,obs,peso,tamanho,raca,especie,nome_proprietario,cod_usuario) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
     const values = [

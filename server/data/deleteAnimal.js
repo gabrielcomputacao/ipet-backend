@@ -3,10 +3,10 @@ const database = require("../infra/database/databaseMysql")
 
 
 exports.deletAnimal = async function(id){
-
+        const dataB =  await database();
 
     try {
-        const dataB =  await database();
+        
          const sql = "DELETE from animal where id_animal= ?"
         const values = [id];
 

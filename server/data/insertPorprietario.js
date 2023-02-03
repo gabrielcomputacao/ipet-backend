@@ -1,9 +1,9 @@
 const database = require('../infra/database/databaseMysql')
 
 exports.insertProprietario = async function (proprietario){
-
+const dataB = await database();
     try {
-        const dataB = await database();
+        
         
         const sql = 'INSERT INTO proprietario(nome,cpf,telefone,obs,id_user) VALUES (?,?,?,?,?)';
         const values = [proprietario.nome,proprietario.cpf,proprietario.telefone,proprietario.obs,proprietario.id_user];

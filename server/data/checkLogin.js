@@ -3,9 +3,9 @@ const poolDatabase = require("../infra/database/databaseMysql")
 
 
 exports.checkLogin = async function(user){
-
-    try{
         const dataB = await poolDatabase();
+    try{
+        
         let sql = "SELECT id,nome,senha from usuario WHERE nome=? AND senha =?"
         let values = [user.usuario , user.senha]
         const [rows] = await dataB.query(sql , values);
@@ -15,5 +15,7 @@ exports.checkLogin = async function(user){
 
     }catch(ex){
         console.log(ex)
+    }finally{
+        dataB.release();
     }
 }
