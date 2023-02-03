@@ -18,8 +18,6 @@ exports.deletAnimal = async function(id){
         
     } catch (error) {
         console.log(error)
-    }finally{
-        dataB.release();
     }
 
    

@@ -17,8 +17,6 @@ exports.insertVacina = async function(vacina){
 
     } catch (error) {
         console.log(error)
-    }finally{
-        dataB.release();
     }
 
 }

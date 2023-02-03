@@ -17,7 +17,5 @@ exports.getEnd = async function(endereco){
 
     } catch (error) {
          console.log(error)
-    }finally{
-        dataB.release();
     }
 }

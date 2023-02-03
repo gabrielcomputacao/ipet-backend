@@ -32,7 +32,5 @@ exports.insertAnimal = async function (animal) {
     
   } catch (error) {
     console.log(error);
-  }finally{
-    dataB.release();
-}
+  }
 };

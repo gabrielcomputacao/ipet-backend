@@ -13,8 +13,6 @@ const dataB = await database();
 
     } catch (error) {
         console.log(error)
-    }finally{
-        dataB.release();
     }
 
 }

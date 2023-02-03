@@ -17,8 +17,6 @@ exports.getAnimais = async function(iduser){
         
     } catch (error) {
         console.log(error)
-    }finally{
-        dataB.release();
     }
 
 

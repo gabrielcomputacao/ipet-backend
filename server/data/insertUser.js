@@ -13,8 +13,6 @@ const dataB = await database();
         return userResponse;
     }catch(ex){
         console.log(ex)
-    }finally{
-        dataB.release();
     }
 
 }
