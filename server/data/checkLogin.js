@@ -15,8 +15,5 @@ exports.checkLogin = async function(user){
 
     }catch(ex){
         console.log(ex)
-    }finally{
-        dataB.release();
     }
-
 }
