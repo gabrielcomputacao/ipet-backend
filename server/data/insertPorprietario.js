@@ -9,7 +9,7 @@ exports.insertProprietario = async function (proprietario){
         const values = [proprietario.nome,proprietario.cpf,proprietario.telefone,proprietario.obs,proprietario.id_user];
         const proprietarioResult = await dataB.query(sql, values);
 
-        await dataB.end();
+       /*  await dataB.end(); */
 
         return proprietarioResult;
 
@@ -17,6 +17,6 @@ exports.insertProprietario = async function (proprietario){
     } catch (error) {
         console.log(error)
     }finally{
-        dataB.destroy();
+        dataB.release();
     }
 }

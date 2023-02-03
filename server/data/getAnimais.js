@@ -10,14 +10,14 @@ exports.getAnimais = async function(iduser){
         const values = [iduser]
         const [rows] = await dataB.query(sql,values);
 
-        await dataB.end();
+        /* await dataB.end(); */
 
         return rows;
         
     } catch (error) {
         console.log(error)
     }finally{
-        dataB.destroy();
+        dataB.release();
     }
 
 

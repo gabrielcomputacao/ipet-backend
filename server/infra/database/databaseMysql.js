@@ -2,13 +2,14 @@
 
 
 const conn = async function connectPool() {
+    
     if (global.connection && global.connection.state != 'disconected') {
         return global.connection;
     }
 
     const mysql = require("mysql2/promise")
 
-    const con = mysql.createConnection({
+    const con = mysql.createPool({
         host: '108.167.168.75',
         user: 'prog1185_root',
         password: 'ipet&123pet',

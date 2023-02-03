@@ -7,7 +7,7 @@ exports.getEnd = async function(endereco){
         const sql = "SELECT id_endereco from endereco WHERE rua=? AND cep=? AND numero=?";
         let values = [endereco.rua , endereco.cep , endereco.numero];
         const [rows] = await dataB.query(sql , values);
-        await dataB.end();
+        /* await dataB.end(); */
 
         console.log(rows)
 
@@ -16,6 +16,6 @@ exports.getEnd = async function(endereco){
     } catch (error) {
          console.log(error)
     }finally{
-        dataB.destroy();
+        dataB.release();
     }
 }
